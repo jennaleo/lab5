@@ -10,7 +10,19 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$("a.friendname").click(friendClick);
 }
+
+function friendClick(e){
+	e.preventDefault();
+	var friendname = $(this).text();
+	var anagram = anagrammedName(friendname);
+	console.log(friendname);
+	console.log(anagram);
+	$(this).text(anagram);
+
+}
+
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
